@@ -4,7 +4,7 @@
 $servidor="localhost";
 $baseDeDatos="deber_programacion_web";
 $usuario="root";
-$contrasenia="Mordecai58";
+$contrasenia="";
 
 try{
 $conexion=new PDO("mysql:host=$servidor;dbname=$baseDeDatos",$usuario,$contrasenia);

@@ -6,7 +6,7 @@ if(!isset($_SESSION['usuario'])){
   header("Location:../../login.php");  
 }
 
-// Borrar dicho registro con el ID correspondiente
+// Borrar dicho registro con el id correspondiente
 if(isset($_GET['txtID'])){
     
   $txtID=(isset($_GET['txtID']))?$_GET['txtID']:"";
@@ -16,7 +16,7 @@ if(isset($_GET['txtID'])){
 
 }
 
-// Seleccionar registros
+// Seleccionar registros de la base de datos y mostralos en un foreach
 $sentencia=$conexion->prepare("SELECT * FROM `alumnos`");
 $sentencia->execute();
 $lista_alumnos=$sentencia->fetchAll(PDO::FETCH_ASSOC);

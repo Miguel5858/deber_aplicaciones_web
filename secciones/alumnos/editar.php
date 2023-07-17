@@ -3,7 +3,7 @@
 include("../../controladores/conexionBaseDatos.php");
 
 
-// Editar dicho registro con el ID correspondiente
+// Editar dicho registro con el id correspondiente
 if(isset($_GET['txtID'])){
     
     $txtID=(isset($_GET['txtID']))?$_GET['txtID']:"";

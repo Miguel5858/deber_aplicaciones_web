@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2023 a las 03:18:10
+-- Tiempo de generación: 17-07-2023 a las 03:53:11
 -- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.1.10
 
@@ -31,7 +31,7 @@ CREATE TABLE `usuarios` (
   `id` int NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `usuario` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `password` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -40,7 +40,9 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`) VALUES
 (1, 'Miguel Intriago', 'miguel', '123'),
-(3, 'Nuevo usuario', 'usuario', '12345');
+(3, 'Nuevo usuario', 'usuario', '12345'),
+(4, 'Alejandro Intriago Tobar', 'miguel', '123'),
+(5, 'Prueba del correo enviado', 'miguel', '$2y$10$5Rarqxp8LtRudz8FzuU.eeV5srehbNX0Pg36ySPnAYXKpEL3lS1J6');
 
 --
 -- Índices para tablas volcadas
@@ -60,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

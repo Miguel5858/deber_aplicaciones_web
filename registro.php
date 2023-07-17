@@ -5,23 +5,26 @@ include("controladores/conexionBaseDatos.php");
 
 
 // Recepcionamos los valores del formulario
-if($_POST){ 
-  $nombre=(isset($_POST['nombre']))?$_POST['nombre']:"";
-  $usuario=(isset($_POST['usuario']))?$_POST['usuario']:"";
-  $password=(isset($_POST['password']))?$_POST['password']:"";
+if($_POST) {
+  $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
+  $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : "";
+  $password = isset($_POST['password']) ? $_POST['password'] : "";
   
-  $sentencia=$conexion->prepare("INSERT INTO `usuarios`(`id`, `nombre`, `usuario`, `password`)
+  // Encriptar el password utilizando password_hash()
+  $passwordEncriptado = password_hash($password, PASSWORD_DEFAULT);
+  
+  $sentencia = $conexion->prepare("INSERT INTO `usuarios`(`id`, `nombre`, `usuario`, `password`)
   VALUES (NULL, :nombre, :usuario, :password);");
 
   $sentencia->bindParam(":nombre", $nombre); 
   $sentencia->bindParam(":usuario", $usuario); 
-  $sentencia->bindParam(":password", $password); 
+  $sentencia->bindParam(":password", $passwordEncriptado); 
   $sentencia->execute();
 
-  $mensaje="Usuario registrado con exito.";
+  $mensaje = "Usuario registrado con éxito.";
   header('Location: index.php?mensaje='.$mensaje);
+}
 
-  }
 
 ?>
 

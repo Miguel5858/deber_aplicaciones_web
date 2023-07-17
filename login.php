@@ -27,7 +27,7 @@ if($_POST){
   if ($lista_usuarios && $lista_usuarios['n_usuario'] > 0) {
     $_SESSION['usuario'] = $lista_usuarios['usuario'];
     $_SESSION['logueado'] = true;
-    header("Location: index.php");
+    header("Location: secciones/alumnos/index.php");
     exit(); // Importante: Terminar el script después de redirigir
   } else {
     $mensaje = "Error: El usuario o la contraseña son incorrectos.";
@@ -40,7 +40,7 @@ if($_POST){
 
 <?php include("plantillas/cabecera.php"); ?>
 
-
+<br><br><br>
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">

@@ -34,10 +34,10 @@ if(isset($_GET['txtID'])){
     Información del Alumno
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><?php echo $nombres; ?></li>
-    <li class="list-group-item"><?php echo $apellidos; ?></li>
-    <li class="list-group-item"><?php echo $telefono; ?></li>
-    <li class="list-group-item"><?php echo $direccion; ?></li>
+    <li class="list-group-item"><strong>Nombres:</strong> <?php echo $nombres; ?></li>
+    <li class="list-group-item"><strong>Apellidos:</strong> <?php echo $apellidos; ?></li>
+    <li class="list-group-item"><strong>Teléfono:</strong> <?php echo $telefono; ?></li>
+    <li class="list-group-item"><strong>Dirección:</strong> <?php echo $direccion; ?></li>
     <a name="" id="" class="btn btn-primary btn-sm" href="index.php" role="button">Regresar</a>
   </ul>
 </div>

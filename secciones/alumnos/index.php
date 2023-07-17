@@ -59,8 +59,8 @@ $lista_alumnos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
           <td><?php echo $registros['telefono']; ?></td>
           <td><?php echo $registros['direccion']; ?></td>
           <td>
-          <a name="" id="" class="btn btn-info btn-sm" href="editar.php?txtID=<?php echo $registros['id']; ?>" role="button">Editar</a>
-
+          <a name="" id="" class="btn btn-warning btn-sm" href="editar.php?txtID=<?php echo $registros['id']; ?>" role="button">Editar</a>
+          <a name="" id="" class="btn btn-info btn-sm" href="ver.php?txtID=<?php echo $registros['id']; ?>" role="button">Informacion</a>
           <a name="" id="" class="btn btn-danger btn-sm" href="index.php?txtID=<?php echo $registros['id']; ?>" onclick="return confirm('Estás seguro que deseas eliminar el registro?');" role="button">Eliminar</a>
           </td>
         </tr>

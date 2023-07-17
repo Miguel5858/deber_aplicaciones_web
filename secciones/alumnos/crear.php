@@ -72,7 +72,7 @@ if($_POST){
 
     <button type="submit" class="btn btn-success btn-sm">Agregar</button>
 
-    <a name="" id="" class="btn btn-primary btn-sm" href="index.php" role="button">Cancelar</a>
+    <a name="" id="" class="btn btn-primary btn-sm" href="index.php" role="button">Salir</a>
 
 
     </form>

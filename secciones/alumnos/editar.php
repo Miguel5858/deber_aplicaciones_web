@@ -90,9 +90,9 @@ if($_POST){
     </div>
 
 
-    <button type="submit" class="btn btn-info btn-sm">Actualizar</button>
+    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
 
-    <a name="" id="" class="btn btn-primary btn-sm" href="index.php" role="button">Cancelar</a>
+    <a name="" id="" class="btn btn-primary btn-sm" href="index.php" role="button">Salir</a>
 
 
     </form>

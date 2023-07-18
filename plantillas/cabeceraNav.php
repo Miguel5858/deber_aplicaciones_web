@@ -78,7 +78,9 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sesion
+
+                    <?php if (isset($_SESSION['logueado']) && $_SESSION['logueado']) ?>
+                      <?php echo $_SESSION['usuario']; ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="../../controladores/cerrar.php">Cerrar Sesion</a>

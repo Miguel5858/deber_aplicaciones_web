@@ -30,7 +30,9 @@ $lista_alumnos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
 
- 
+
+
+
 
  <div class="card mt-4">
   <div class="card-header">

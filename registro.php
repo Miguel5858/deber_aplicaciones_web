@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mensaje = "Usuario registrado con éxito.";
         // Redireccionar después de realizar la inserción
-        header('Location: index.php?mensaje=' . $mensaje);
+        header('Location: login.php?mensaje=' . $mensaje);
         exit; // Detener la ejecución del script después de redireccionar
     }
 }
@@ -52,19 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                      <?php endif; ?>
 
                 <!-- Campo de Nombre -->
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="nombre">Nombre:</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
                 </div>
 
                 <!-- Campo de Usuario -->
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="usuario">Usuario:</label>
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
                 </div>
 
                 <!-- Campo de Contraseña -->
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña">
                 </div>

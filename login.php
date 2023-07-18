@@ -9,23 +9,27 @@ if ($_POST) {
   $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : "";
   $password = isset($_POST['password']) ? $_POST['password'] : "";
 
-  $sentencia = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
-  $sentencia->bindParam(":usuario", $usuario);
-  $sentencia->execute();
-
-  $usuarioEncontrado = $sentencia->fetch(PDO::FETCH_ASSOC);
-
-  if ($usuarioEncontrado) {
-    if (password_verify($password, $usuarioEncontrado['password'])) {
-      $_SESSION['usuario'] = $usuarioEncontrado['usuario'];
-      $_SESSION['logueado'] = true;
-      header("Location: secciones/alumnos/index.php");
-      exit();
-    } else {
-      $mensaje = "Error: Contraseña incorrecta.";
-    }
+  if (empty($usuario) || empty($password)) {
+    $mensaje = "Error: Debes llenar todos los campos.";
   } else {
-    $mensaje = "Error: El usuario no existe.";
+    $sentencia = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->execute();
+
+    $usuarioEncontrado = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+    if ($usuarioEncontrado) {
+      if (password_verify($password, $usuarioEncontrado['password'])) {
+        $_SESSION['usuario'] = $usuarioEncontrado['usuario'];
+        $_SESSION['logueado'] = true;
+        header("Location: secciones/alumnos/index.php");
+        exit();
+      } else {
+        $mensaje = "Error: Contraseña incorrecta.";
+      }
+    } else {
+      $mensaje = "Error: El usuario no existe.";
+    }
   }
 }
 ?>

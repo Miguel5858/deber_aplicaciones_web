@@ -4,6 +4,7 @@ include("controladores/conexionBaseDatos.php");
 // Mensaje de error por defecto
 $mensaje = "";
 
+//indicamos que se están enviando datos al servidor a través de un formulario
 // Recepcionamos los valores del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";

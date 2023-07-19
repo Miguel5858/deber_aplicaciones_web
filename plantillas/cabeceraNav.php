@@ -54,8 +54,8 @@
 
 
 
-<!-- Efecto de carga -->
-<div id="loadingOverlay" class="loading-overlay" style="display: none;">
+         <!-- Efecto de carga -->
+         <div id="loadingOverlay" class="loading-overlay" style="display: none;">
             <div class="loading-spinner"></div>
         </div>
 
@@ -74,10 +74,10 @@
                 <a class="nav-link" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Alumnos</a>
+                <a class="nav-link" href="index.php">Estudiantes</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                     <?php if (isset($_SESSION['logueado']) && $_SESSION['logueado']) ?>
                       <?php echo $_SESSION['usuario']; ?>

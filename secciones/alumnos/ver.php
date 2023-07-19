@@ -4,6 +4,11 @@
 
 include("../../controladores/conexionBaseDatos.php");
 
+session_start();
+if(!isset($_SESSION['usuario'])){
+  header("Location:../../login.php");  
+}
+
 
 // Traemos los datos del alumno para mostrarlos con el id correspondiente
 if(isset($_GET['txtID'])){

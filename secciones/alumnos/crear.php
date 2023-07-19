@@ -48,25 +48,25 @@ if($_POST){
     <div class="mb-3">
       <label for="nombres" class="form-label">Nombres:</label>
     <input type="text"
-        class="form-control" name="nombres" id="nombres" placeholder="Ingresar nombres">
+        class="form-control" name="nombres" id="nombres" placeholder="Ingresar nombres" required>
     </div>
 
     <div class="mb-3">
       <label for="apellidos" class="form-label">Apellidos:</label>
     <input type="text"
-        class="form-control" name="apellidos" id="apellidos" placeholder="Ingresar apellidos">
+        class="form-control" name="apellidos" id="apellidos" placeholder="Ingresar apellidos" required>
     </div>
 
     <div class="mb-3">
       <label for="telefono" class="form-label">Teléfono:</label>
     <input type="text"
-        class="form-control" name="telefono" id="telefono" placeholder="Ingresar teléfono">
+        class="form-control" name="telefono" id="telefono" placeholder="Ingresar teléfono" required>
     </div>
 
     <div class="mb-3">
       <label for="direccion" class="form-label">Dirección:</label>
     <input type="text"
-        class="form-control" name="direccion" id="direccion" placeholder="Ingresar dirección">
+        class="form-control" name="direccion" id="direccion" placeholder="Ingresar dirección" required>
     </div>
 
 

@@ -2,6 +2,12 @@
 
 include("../../controladores/conexionBaseDatos.php");
 
+session_start();
+if(!isset($_SESSION['usuario'])){
+  header("Location:../../login.php");
+  
+}
+
 
 // Editar dicho registro con el id correspondiente
 if(isset($_GET['txtID'])){
@@ -68,25 +74,25 @@ if($_POST){
     <div class="mb-3">
       <label for="nombres" class="form-label">Nombres:</label>
     <input value="<?php echo $nombres; ?>" type="text"
-        class="form-control" name="nombres" id="nombres" placeholder="Ingresar nombres">
+        class="form-control" name="nombres" id="nombres" placeholder="Ingresar nombres" required>
     </div>
 
     <div class="mb-3">
       <label for="apellidos" class="form-label">Apellidos:</label>
     <input value="<?php echo $apellidos; ?>" type="text"
-        class="form-control" name="apellidos" id="apellidos" placeholder="Ingresar apellidos">
+        class="form-control" name="apellidos" id="apellidos" placeholder="Ingresar apellidos" required>
     </div>
 
     <div class="mb-3">
       <label for="telefono" class="form-label">Teléfono:</label>
     <input value="<?php echo $telefono; ?>" type="text"
-        class="form-control" name="telefono" id="telefono" placeholder="Ingresar teléfono">
+        class="form-control" name="telefono" id="telefono" placeholder="Ingresar teléfono" required>
     </div>
 
     <div class="mb-3">
       <label for="direccion" class="form-label">Dirección:</label>
     <input value="<?php echo $direccion; ?>" type="text"
-        class="form-control" name="direccion" id="direccion" placeholder="Ingresar dirección">
+        class="form-control" name="direccion" id="direccion" placeholder="Ingresar dirección" required>
     </div>
 
 

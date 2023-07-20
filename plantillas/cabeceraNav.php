@@ -74,7 +74,7 @@
                 <a class="nav-link" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Estudiantes</a>
+                <a class="nav-link" href="index.php">Programadores</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

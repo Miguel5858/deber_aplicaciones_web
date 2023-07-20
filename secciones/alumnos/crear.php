@@ -13,16 +13,34 @@ if(!isset($_SESSION['usuario'])){
 if($_POST){ 
   $nombres=(isset($_POST['nombres']))?$_POST['nombres']:"";
   $apellidos=(isset($_POST['apellidos']))?$_POST['apellidos']:"";
-  $telefono=(isset($_POST['telefono']))?$_POST['telefono']:"";
-  $direccion=(isset($_POST['direccion']))?$_POST['direccion']:"";
+  $cargo=(isset($_POST['cargo']))?$_POST['cargo']:"";
+  $informacion=(isset($_POST['informacion']))?$_POST['informacion']:"";
+  $imagen=(isset($_FILES['imagen']['name']))?$_FILES['imagen']['name']:"";
+
+
+
+
+       
+    // SUBIR LA IMAGEN INICIO
+    $fecha_imagen=new DateTime();
+    $nombre_archivo_imagen=($imagen!="")? $fecha_imagen->getTimestamp()."_".$imagen:"";
+
+    $tmp_imagen=$_FILES["imagen"]["tmp_name"];
+    if($tmp_imagen!=""){
+    move_uploaded_file($tmp_imagen,"../../imagenes/programador/".$nombre_archivo_imagen);
+    }
+     // SUBIR LA IMAGEN FIN
+
+
   
-  $sentencia=$conexion->prepare("INSERT INTO `alumnos`(`ID`, `nombres`, `apellidos`, `telefono`, `direccion`)
-  VALUES (NULL, :nombres, :apellidos, :telefono, :direccion);");
+  $sentencia=$conexion->prepare("INSERT INTO `programadores`(`ID`, `nombres`, `apellidos`, `cargo`, `informacion`,`imagen`)
+  VALUES (NULL, :nombres, :apellidos, :cargo, :informacion, :imagen);");
 
   $sentencia->bindParam(":nombres", $nombres); 
   $sentencia->bindParam(":apellidos", $apellidos); 
-  $sentencia->bindParam(":telefono", $telefono); 
-  $sentencia->bindParam(":direccion", $direccion); 
+  $sentencia->bindParam(":cargo", $cargo); 
+  $sentencia->bindParam(":informacion", $informacion); 
+  $sentencia->bindParam(":imagen", $nombre_archivo_imagen); 
   $sentencia->execute();
 
 
@@ -39,11 +57,11 @@ if($_POST){
 
 <div class="card">
     <div class="card-header">
-        Crear Alumno
+        Crear Programador
     </div>
     <div class="card-body">
      
-    <form action="" method="post">
+    <form enctype="multipart/form-data" action="" method="post">
 
     <div class="mb-3">
       <label for="nombres" class="form-label">Nombres:</label>
@@ -58,15 +76,20 @@ if($_POST){
     </div>
 
     <div class="mb-3">
-      <label for="telefono" class="form-label">Teléfono:</label>
+      <label for="cargo" class="form-label">Cargo:</label>
     <input type="text"
-        class="form-control" name="telefono" id="telefono" placeholder="Ingresar teléfono" required>
+        class="form-control" name="cargo" id="cargo" placeholder="Ingresar Cargo" required>
     </div>
 
     <div class="mb-3">
-      <label for="direccion" class="form-label">Dirección:</label>
-    <input type="text"
-        class="form-control" name="direccion" id="direccion" placeholder="Ingresar dirección" required>
+      <label for="informacion" class="form-label">Informacion:</label>
+      <textarea class="form-control" rows="5" name="informacion" id="informacion"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="imagen" class="form-label">Imagen:</label>
+    <input type="file"
+        class="form-control" name="imagen" id="imagen" required>
     </div>
 
 

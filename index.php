@@ -80,7 +80,7 @@
   <div class="jumbotron">
     <div class="container">
       <h1>Bienvenido a mi página</h1>
-      <p>Administrador de Estudiantes</p>
+      <p>Administrador de Programadores</p>
       <a class="btn btn-ingresar" href="login.php">Ingresar</a>
     </div>
   </div>

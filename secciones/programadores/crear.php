@@ -16,10 +16,6 @@ if($_POST){
   $cargo=(isset($_POST['cargo']))?$_POST['cargo']:"";
   $informacion=(isset($_POST['informacion']))?$_POST['informacion']:"";
   $imagen=(isset($_FILES['imagen']['name']))?$_FILES['imagen']['name']:"";
-
-
-
-
        
     // SUBIR LA IMAGEN INICIO
     $fecha_imagen=new DateTime();
@@ -29,10 +25,7 @@ if($_POST){
     if($tmp_imagen!=""){
     move_uploaded_file($tmp_imagen,"../../imagenes/programador/".$nombre_archivo_imagen);
     }
-     // SUBIR LA IMAGEN FIN
-
-
-  
+     // SUBIR LA IMAGEN FIN  
   $sentencia=$conexion->prepare("INSERT INTO `programadores`(`ID`, `nombres`, `apellidos`, `cargo`, `informacion`,`imagen`)
   VALUES (NULL, :nombres, :apellidos, :cargo, :informacion, :imagen);");
 

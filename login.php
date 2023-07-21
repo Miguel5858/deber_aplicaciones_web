@@ -22,7 +22,7 @@ if ($_POST) {
       if (password_verify($password, $usuarioEncontrado['password'])) {
         $_SESSION['usuario'] = $usuarioEncontrado['usuario'];
         $_SESSION['logueado'] = true;
-        header("Location: secciones/alumnos/index.php");
+        header("Location: secciones/programadores/index.php");
         exit();
       } else {
         $mensaje = "Error: Contraseña incorrecta.";
